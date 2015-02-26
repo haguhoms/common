@@ -2,14 +2,14 @@
 
   function initialize() {
     var $image = $('.js-changeImage');
-    image.on({
+    $image.on({
       'mouseenter': function() {
-        var target = $(this).find('img');
-        target.attr('src', target.attr('src').replace('_off', '_on'));
+        var $target = $(this).find('img');
+        $target.attr('src', $target.attr('src').replace('_off', '_on'));
       },
       'mouseleave': function() {
-        var target = $(this).find('img');
-        target.attr('src', target.attr('src').replace('_on', '_off'));
+        var $target = $(this).find('img');
+        $target.attr('src', $target.attr('src').replace('_on', '_off'));
       });
   }
 
