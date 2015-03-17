@@ -18,8 +18,12 @@
 
     // 各初期処理
     Const.prototype.init = function() {
+      var that = this;
       this.UA = this.getUA(); // userAgent取得
       this.getSize(); // windowサイズ取得
+      $(w).resize(function() {
+        that.getSize();
+      });
     };
 
     // userAgent取得
@@ -65,6 +69,7 @@
     Const.prototype.getSize = function() {
       this.W_W = this.getBrowserWidth();
       this.W_H = this.getBrowserHeight();
+
 
       // ブラウザの幅取得
       this.getBrowserWidth = function() {
