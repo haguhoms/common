@@ -312,13 +312,14 @@
   })();
 
   BaseAnimator = (function() {
+    BaseAnimator.prototype = new Const();
     BaseAnimator.prototype._body = null;
     BaseAnimator.prototype._startTime = 0;
     BaseAnimator.prototype._duration = 0;
     BaseAnimator.prototype._rid = 0;
 
     function BaseAnimator() {
-
+      Const.call(this);
     }
 
     BaseAnimator.prototype.init = function(duration) {
@@ -381,7 +382,7 @@
     return window.cancelAnimationFrame || window.webkitCancelRequestAnimationFrame || window.mozCancelRequestAnimationFrame || window.oCancelRequestAnimationFrame || window.msCancelRequestAnimationFrame || window.clearTimeout;
   })();
 
-  $(window).load(function() {
+  $(w).load(function() {
     initialize();
   });
 
